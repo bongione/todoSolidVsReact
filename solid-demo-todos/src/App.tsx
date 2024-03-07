@@ -12,7 +12,6 @@ const App: Component = () => {
   const {todos} = useTodosApi();
   const visibleTodos = createMemo(() => {
     const items = doneItemsHidden() ? todos.filter(todo => !todo.isChecked) : todos;
-    console.log('Visible items: ', JSON.stringify(items));
     return items;
   });
   contFnRender('Render App');

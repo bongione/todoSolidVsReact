@@ -7,7 +7,6 @@ import { useTodosApi } from './dataprovider';
 import AddToDo from './AddToDo';
 
 function App() {
-  countFnRender('App');
   const [doneItemsHidden, setDoneItemsHidden] = useState(false);
   const toggleDoneHitems = () => setDoneItemsHidden((hideDone) => !hideDone);
   const {todos} = useTodosApi();
@@ -15,6 +14,7 @@ function App() {
     const items = doneItemsHidden ? todos.filter(todo => !todo.isChecked) : todos;
     return items;
   }, [doneItemsHidden, todos]);
+  countFnRender('App');
   
   return (
     <div className="h-screen w-full px-16 py-8 bg-gray-200 tex-gray-900">
